@@ -11,10 +11,10 @@ const { updateUser, deleteUser, oneUser } = require("../controllers/user.control
 router.get("/user/:id", oneUser);
 
 // update user
-router.put("/update-user", updateUser);
+router.put("/update-user/:id", updateUser);
 
 // delete user
-router.delete("/delete-user", deleteUser);
+router.delete("/delete-user/:id", deleteUser);
 
 // router exports
 module.exports = router;
