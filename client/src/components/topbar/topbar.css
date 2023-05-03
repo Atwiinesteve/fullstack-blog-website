@@ -37,6 +37,8 @@
     list-style: none;
     margin: 0 10px;
     cursor: pointer;
+    font-size: 14px;
+    font-weight: 300;
 }
 
 .navbar__profile {
