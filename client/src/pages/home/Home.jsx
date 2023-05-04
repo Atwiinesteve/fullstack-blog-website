@@ -4,10 +4,10 @@ import React from 'react';
 // components
 import Header from '../../components/header/Header';
 import Sidebar from '../../components/sidebar/Sidebar';
+import Posts from '../../components/posts/Posts';
 
 // styles
 import "./home.css";
-import Post from '../../components/posts/Post';
 
 // home component
 export default function Home() {
@@ -15,7 +15,7 @@ export default function Home() {
     <>
         <Header />
         <div className="main__body">
-          <Post />
+          <Posts />
           <Sidebar />
         </div>
     </>
