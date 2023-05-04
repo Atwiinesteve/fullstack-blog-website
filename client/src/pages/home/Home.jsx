@@ -6,9 +6,12 @@ import Header from '../../components/header/Header';
 import Sidebar from '../../components/sidebar/Sidebar';
 import Posts from '../../components/posts/Posts';
 
+// import pages
+import SinglePost from '../single/SinglePost';
+import Write from '../write/Write';
+
 // styles
 import "./home.css";
-import Single from '../../components/single/Single';
 
 // home component
 export default function Home() {
@@ -17,8 +20,9 @@ export default function Home() {
         <Header />
         <div className="main__body">
           {/* <Posts /> */}
-          <Single />
-          <Sidebar />
+          {/* <SinglePost /> */}
+          <Write />
+          {/* <Sidebar /> */}
         </div>
     </>
   )
