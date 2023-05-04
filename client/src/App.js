@@ -9,6 +9,7 @@ import Layout from './components/Layout';
 import Home from './pages/home/Home';
 import Login from './pages/login/Login';
 import Settings from './pages/settings/Settings';
+import Register from './pages/register/Register';
 
 // app component.
 export default function App() {
@@ -19,6 +20,7 @@ export default function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/update" element={<Settings />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Route>
       </Routes>
     </>

@@ -1,9 +1,29 @@
-*, *::after, *::berfore {
-  padding: 0px;
-  margin: 0px;
-  box-sizing: border-box;
+*,
+*::after,
+*::berfore {
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+	font-family: "Poppins", sans-serif;
+  width: 100vw;
+  height: 100vh;
+}
+
+::placeholder {
+	font-family: "Roboto", sans-serif;
+	font-size: 1rem;
+  color: #5e5e5e;
+  font-weight: 300;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  font-family: "Roboto", sans-serif;
+	font-size: 1.1rem;
+  color: #000000;
+  font-weight: 400;
 }

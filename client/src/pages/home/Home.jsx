@@ -20,11 +20,11 @@ export default function Home() {
     <>
         <Header />
         <div className="main__body">
-          {/* <Posts /> */}
+          <Posts />
           {/* <SinglePost /> */}
           {/* <Write /> */}
           {/* <Settings /> */}
-          {/* <Sidebar /> */}
+          <Sidebar />
         </div>
     </>
   )
