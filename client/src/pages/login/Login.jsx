@@ -10,18 +10,24 @@ export default function Login() {
 		<div className="login">
 			<span className="loginTitle">Login</span>
 			<form className="loginForm">
-				<label>Email</label>
-				<input
-					className="loginInput"
-					type="text"
-					placeholder="Enter your email..."
-				/>
-				<label>Password</label>
-				<input
-					className="loginInput"
-					type="password"
-					placeholder="Enter your password..."
-				/>
+				<div className="input__control">
+					<label>Email</label>
+					<input
+						className="loginInput"
+						type="text"
+						placeholder="Enter your email..."
+					/>
+				</div>
+
+				<div className="input__control">
+					<label>Password</label>
+					<input
+						className="loginInput"
+						type="password"
+						placeholder="Enter your password..."
+					/>
+				</div>
+
 				<button className="loginButton">Login</button>
 			</form>
 			<button className="loginRegisterButton">Register</button>
