@@ -23,7 +23,7 @@ export default function Home() {
           {/* <Posts /> */}
           {/* <SinglePost /> */}
           {/* <Write /> */}
-          <Settings />
+          {/* <Settings /> */}
           {/* <Sidebar /> */}
         </div>
     </>
