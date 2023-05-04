@@ -9,6 +9,7 @@ import Posts from '../../components/posts/Posts';
 // import pages
 import SinglePost from '../single/SinglePost';
 import Write from '../write/Write';
+import Settings from '../settings/Settings';
 
 // styles
 import "./home.css";
@@ -21,7 +22,8 @@ export default function Home() {
         <div className="main__body">
           {/* <Posts /> */}
           {/* <SinglePost /> */}
-          <Write />
+          {/* <Write /> */}
+          <Settings />
           {/* <Sidebar /> */}
         </div>
     </>
