@@ -5,13 +5,16 @@ const express = require("express");
 const router = express.Router();
 
 // controllers
-const { onePost, updatePost, deletePost, createPost } = require("../controllers/post.controller");
+const { onePost, updatePost, deletePost, createPost, getAllPosts } = require("../controllers/post.controller");
 
 // create post
 router.post("/create-post", createPost)
 
 // get one post
 router.get("/post/:id", onePost);
+
+// get all posts
+router.get("/posts", getAllPosts);
 
 // update post
 router.put("/update-post/:id", updatePost);
