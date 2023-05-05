@@ -1,5 +1,6 @@
 // react imports
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 // components
 import Header from '../../components/header/Header';
@@ -16,6 +17,19 @@ import "./home.css";
 
 // home component
 export default function Home() {
+
+  // post states
+  const [posts, setPosts] = useState([]);
+
+  // fetch posts.
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const response = await axios.get("/posts");
+      console.log(response.data);
+    };
+    fetchPosts();
+  }, [])
+
   return (
     <>
         <Header />

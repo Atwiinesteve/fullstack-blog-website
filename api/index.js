@@ -6,7 +6,7 @@ require("dotenv/config");
 
 require("./database/database.connections");
 
-import uploads from "./controllers/file.uploader.controller";
+const uploads = require("./controllers/file.uploader.controller");
 
 const app = express()
 const PORT = process.env.PORT || 9090;

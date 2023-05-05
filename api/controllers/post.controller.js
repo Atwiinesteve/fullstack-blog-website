@@ -114,7 +114,7 @@ async function getAllPosts(request, response) {
         let posts;
         if(username) {
             posts = await Post.find({ username })
-        } else if(categroyName) {
+        } else if(categoryName) {
             posts = await Post.find({ categories: {
                 $in: [categoryName]
             }})
