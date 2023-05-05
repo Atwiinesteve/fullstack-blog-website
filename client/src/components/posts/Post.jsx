@@ -5,7 +5,7 @@ import React from "react";
 import "./post.css";
 
 // sidebar component
-export default function Post() {
+export default function Post({ post }) {
 	return (
 		<>
 			<div className="post">
@@ -16,27 +16,17 @@ export default function Post() {
 				/>
 				<div className="post__info">
 					<div className="post__categories">
-						<span className="post__category">Music</span>
-						<span className="post__category">Life</span>
+						<span className="post__category">{post.category}</span>
+						<span className="post__category">{post.category}</span>
 					</div>
 					<span className="post__title">
-						Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+						{post.title}
 					</span>
 					<hr />
 					<span className="post__date">1 hour ago</span>
 				</div>
                 <p className="post__desc">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    In ex nihil fugiat vitae explicabo dolorum excepturi 
-                    impedit, eaque nulla quae error quia eius neque non. 
-                    A aliquam saepe quae est eius esse quaerat sequi quos expedita 
-                    temporibus. Eaque ratione veniam, ipsum deleniti officiis maxime odio 
-                    sed assumenda ad quae voluptatibus architecto ea. Dolor eius omnis dolorem consequuntur 
-                    blanditiis tempora ipsam! Temporibus aliquam dolore, 
-                    itaque et repellat fuga dignissimos modi odio atque 
-                    ab praesentium nesciunt, perferendis commodi, placeat 
-                    dicta necessitatibus! Sequi quidem debitis corrupti nobis 
-                    ipsam accusantium molestias molestiae numquam dolorem!
+                    {post.desc}
                 </p>
 			</div>
 		</>

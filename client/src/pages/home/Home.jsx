@@ -25,7 +25,7 @@ export default function Home() {
   useEffect(() => {
     const fetchPosts = async () => {
       const response = await axios.get("/posts");
-      console.log(response.data);
+      setPosts(response.data)
     };
     fetchPosts();
   }, [])
@@ -34,10 +34,7 @@ export default function Home() {
     <>
         <Header />
         <div className="main__body">
-          <Posts />
-          {/* <SinglePost /> */}
-          {/* <Write /> */}
-          {/* <Settings /> */}
+          <Posts posts={posts} />
           <Sidebar />
         </div>
     </>

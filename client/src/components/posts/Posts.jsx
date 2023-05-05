@@ -8,27 +8,13 @@ import Post from "./Post";
 import "./post.css";
 
 // sidebar component
-export default function Posts() {
+export default function Posts({ posts }) {
 	return (
 		<>
 			<div className="posts">
-				<Post />
-				<Post />
-				<Post />
-				<Post />
-				<Post />
-				<Post />
-				<Post />
-				<Post />
-				<Post />
-				<Post />
-				<Post />
-				<Post />
-				<Post />
-				<Post />
-				<Post />
-				<Post />
-				<Post />
+				{posts.map((post) => (
+					<Post post={post} />
+				))}
 			</div>
 		</>
 	);
