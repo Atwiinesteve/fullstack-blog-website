@@ -12,7 +12,7 @@ export default function SinglePost() {
 	return (
 		<div className="single">
 			<Single />
-			{/* <Sidebar /> */}
+			<Sidebar />
 		</div>
 	);
 }

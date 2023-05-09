@@ -17,7 +17,7 @@ import SinglePost from "./pages/single/SinglePost";
 // app component.
 export default function App() {
 
-  const user = false;
+  const user = true;
 
 	return (
 		<>
@@ -28,7 +28,7 @@ export default function App() {
 				<Route path="/login" element={ user ? <Home /> : <Login />} />
 				<Route path="/register" element={ user ? <Home /> : <Register />} />
 				<Route path="/write" element={ user ? <Write /> : <Register />} />
-				<Route path="/blog/:blogId" element={ user ? <SinglePost /> : <Register />} />
+				<Route path="/post/:postId" element={ user ? <SinglePost /> : <Register />} />
 			</Routes>
 		</>
 	);

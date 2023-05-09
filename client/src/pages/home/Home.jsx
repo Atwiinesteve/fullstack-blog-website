@@ -5,7 +5,6 @@ import axios from 'axios';
 // components
 import Header from '../../components/header/Header';
 import Sidebar from '../../components/sidebar/Sidebar';
-import Posts from '../../components/posts/Posts';
 
 // import pages
 import SinglePost from '../single/SinglePost';
@@ -14,6 +13,7 @@ import Settings from '../settings/Settings';
 
 // styles
 import "./home.css";
+import Posts from '../../components/posts/Posts';
 
 // home component
 export default function Home() {
@@ -24,8 +24,8 @@ export default function Home() {
   // fetch posts.
   useEffect(() => {
     const fetchPosts = async () => {
-      const response = await axios.get("/posts");
-      setPosts(response.data)
+      const result = await axios.get("/posts");
+      setPosts(result.data.posts)
     };
     fetchPosts();
   }, [])
@@ -34,7 +34,7 @@ export default function Home() {
     <>
         <Header />
         <div className="main__body">
-          <Posts posts={posts} />
+          <Posts postsData={posts} />
           <Sidebar />
         </div>
     </>

@@ -89,8 +89,8 @@ async function deletePost(request, response) {
 // get one post
 async function onePost(request, response) {
     try {
-        const postId = request.params.id;
-        const post = await Post.findById(postId);
+        const id = request.query.id;
+        const post = await Post.findById(id);
         if(post) {
             return response.status(200).json({ post })
         } else {
