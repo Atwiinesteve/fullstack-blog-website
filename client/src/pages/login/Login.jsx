@@ -3,6 +3,7 @@ import React from 'react';
 
 // styles
 import "./login.css";
+import { Link } from 'react-router-dom';
 
 // login component.
 export default function Login() {
@@ -29,8 +30,18 @@ export default function Login() {
 				</div>
 
 				<button className="loginButton">Login</button>
+
+				<p className="account__links">
+					No Account, Register{" "}
+					<Link to={'/register'}
+						style={{
+							fontSize: "1rem",
+							textDecoration: "underline",
+						}}>
+						Here...
+					</Link>
+				</p>
 			</form>
-			<button className="loginRegisterButton">Register</button>
 		</div>
 	);
 }
