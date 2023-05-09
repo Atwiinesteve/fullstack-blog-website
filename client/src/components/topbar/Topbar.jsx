@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 // topbar components
 export default function Topbar() {
-	const user = true;
+	const user = false;
 
 	return (
 		<>
@@ -32,15 +32,39 @@ export default function Topbar() {
 						<li className="link">
 							<Link to={"/write"}>WRITE</Link>
 						</li>
-						<li className="link">{user && <Link to={"/logout"}>LOGOUT</Link>}</li>
+						<li className="link">
+							{user && <Link to={"/logout"}>LOGOUT</Link>}
+						</li>
 					</ul>
 				</div>
 				<div className="navbar__profile">
-					<img
-						src="https://images.unsplash.com/photo-1512485694743-9c9538b4e6e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fHBlb3BsZSUyMGZhY2VzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
-						alt="profile avatar"
-						className="profile__image"
-					/>
+					{user ? (
+						<img
+							src="https://images.unsplash.com/photo-1512485694743-9c9538b4e6e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fHBlb3BsZSUyMGZhY2VzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+							alt="profile avatar"
+							className="profile__image"
+						/>
+					) : (
+						<>
+							<ul className="links" style={{
+								listStyle: "none",
+								display: 'flex',
+								flexDirection: 'row',
+								color: "#444",
+								justifyContent: 'space-around',
+								fontWeight: "300"
+							}}>
+								<li className="link" style={{
+									marginRight: "20px"
+								}}>
+									<Link to={"/login"}>LOGIN</Link>
+								</li>
+								<li className="link">
+									<Link to={"/register"}>REGISTER</Link>
+								</li>
+							</ul>
+						</>
+					)}
 					<i className="fa-sharp fa-solid fa-magnifying-glass"></i>
 				</div>
 			</div>
