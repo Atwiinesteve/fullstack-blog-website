@@ -28,7 +28,7 @@ export default function App() {
 				<Route path="/login" element={ user ? <Home /> : <Login />} />
 				<Route path="/register" element={ user ? <Home /> : <Register />} />
 				<Route path="/write" element={ user ? <Write /> : <Register />} />
-				<Route path="/blog" element={ user ? <SinglePost /> : <Register />} />
+				<Route path="/blog/:blogId" element={ user ? <SinglePost /> : <Register />} />
 			</Routes>
 		</>
 	);

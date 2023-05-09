@@ -1,12 +1,15 @@
 // react imports
-import React from 'react';
+import React from "react";
 
 // styles
-import './topbar.css';
+import "./topbar.css";
+import { Link } from "react-router-dom";
 
 // topbar components
 export default function Topbar() {
-  return (
+	const user = true;
+
+	return (
 		<>
 			<div className="navbar__top">
 				<div className="navbar__icons">
@@ -17,11 +20,19 @@ export default function Topbar() {
 				</div>
 				<div className="navbar__links">
 					<ul className="links">
-						<li className="link">HOME</li>
-						<li className="link">ABOUT</li>
-						<li className="link">CONTACTS</li>
-						<li className="link">WRITE</li>
-						<li className="link">LOGOUT</li>
+						<li className="link">
+							<Link to={"/"}>HOME</Link>
+						</li>
+						<li className="link">
+							<Link to={"/about"}>ABOUT</Link>
+						</li>
+						<li className="link">
+							<Link to={"/contacts"}>CONTACTS</Link>
+						</li>
+						<li className="link">
+							<Link to={"/write"}>WRITE</Link>
+						</li>
+						<li className="link">{user && <Link to={"/logout"}>LOGOUT</Link>}</li>
 					</ul>
 				</div>
 				<div className="navbar__profile">
@@ -35,4 +46,4 @@ export default function Topbar() {
 			</div>
 		</>
 	);
-};
+}
