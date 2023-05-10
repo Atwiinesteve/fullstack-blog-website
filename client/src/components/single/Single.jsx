@@ -12,7 +12,6 @@ export default function Single() {
 	// post location on page
 	const location = useLocation();
 	const path = location.pathname.split("/")[2];
-	console.log(path);
 
 	// single post state
 	const [post, setPost] = useState({});

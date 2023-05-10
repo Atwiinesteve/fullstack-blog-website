@@ -14,7 +14,6 @@ export default function Sidebar() {
 		const getCategories = async () => {
 			const result = await axios.get("/categories");
 			setCategories(result.data.categories);
-			console.log(result.data.categories);
 		};
 		getCategories();
 	}, []);
@@ -39,8 +38,8 @@ export default function Sidebar() {
 					<span className="sidebar__title">CATEGORIES</span>
 					<ul className="sidebar__list">
 						{categories.map((c) => (
-							<div className="sidebar__list__item" key={c.id}>
-								<li>{c.name}</li>
+							<div className="sidebar__list__item">
+								<li key={c.id}>{c.name}</li>
 							</div>
 						))}
 					</ul>
