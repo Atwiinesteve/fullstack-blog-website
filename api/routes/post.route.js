@@ -11,7 +11,7 @@ const { onePost, updatePost, deletePost, createPost, getAllPosts } = require("..
 router.post("/create-post", createPost)
 
 // get one post
-router.get("/post", onePost);
+router.get("/post/:id", onePost);
 
 // get all posts
 router.get("/posts", getAllPosts);

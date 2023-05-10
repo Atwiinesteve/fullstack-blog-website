@@ -14,7 +14,7 @@ export default function Posts({postsData}) {
 			<div className="posts">
 				{
 					postsData.map((p) => (
-						<div className="post" key={p.id}>
+						<div className="post" key={p.id} >
 							<Post post={p} />
 						</div>
 					))

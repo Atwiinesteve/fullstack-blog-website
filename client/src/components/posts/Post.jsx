@@ -11,20 +11,20 @@ export default function Post({ post }) {
 		<>
 			<div className="post">
 				{post.photo && (
-					<img
-						src={post.photo}
-						alt="cayote snapshot"
-						className="post__image"
-					/>
+					<img src={post.photo} alt="cayote snapshot" className="post__image" />
 				)}
 
 				<div className="post__info">
 					<div className="post__categories">
 						{post.categories.map((category) => (
-							<span key={category.id} className="post__category">{category.name}</span>
+							<div key={category.id}>
+								<span className="post__category">
+									{category.name}
+								</span>
+							</div>
 						))}
 					</div>
-					<Link to={`/post/${post._id}`}>
+					<Link to={`http://localhost:8080/api/post/${post._id}`}>
 						<span className="post__title">{post.title}</span>
 					</Link>
 					<hr />

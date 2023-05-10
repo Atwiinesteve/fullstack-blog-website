@@ -23,12 +23,12 @@ export default function Home() {
 
   // fetch posts.
   useEffect(() => {
-    const fetchPosts = async () => {
-      const result = await axios.get("/posts");
-      setPosts(result.data.posts)
+    const getPosts = async () => {
+      const result = await axios.get("http://localhost:8080/api/posts");
+      setPosts(result.data.posts);
     };
-    fetchPosts();
-  }, [])
+    getPosts();
+  }, []);
 
   return (
     <>

@@ -11,7 +11,9 @@ const uploads = require("./controllers/file.uploader.controller");
 const app = express()
 const PORT = process.env.PORT || 9090;
 
-
+const corsOptions = {
+    origin: ['http://localhost:3000']
+}
 
 app.use(cors());
 app.use(express.json());

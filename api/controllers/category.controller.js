@@ -39,7 +39,7 @@ async function getAllCategories(request, response) {
     try {
         const categories = await Category.find();
         if(categories) {
-            return response.status(200).json({ posts })
+            return response.status(200).json({ categories })
         } else {
             return response.status(404).json({ message: `No categories were found..`})
         }

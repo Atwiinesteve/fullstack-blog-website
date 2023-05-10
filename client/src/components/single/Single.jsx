@@ -10,11 +10,11 @@ import axios from "axios";
 export default function Single() {
 	const location = useLocation();
 	const path = location.pathname.split("/")[2];
+	console.log(path)
 	const [post, setPost] = useState({});
-console.log("path", path);
 	useEffect(() => {
 		const fetchPost = async () => {
-			const result = await axios.get(`/post`, {
+			const result = await axios.get(`http://localhost:8080/api/post/`, {
 				params: { id: path },
 			});
 			console.log(result);
