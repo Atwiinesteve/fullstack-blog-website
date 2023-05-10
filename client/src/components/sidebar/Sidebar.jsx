@@ -12,7 +12,7 @@ export default function Sidebar() {
 
 	useEffect(() => {
 		const getCategories = async () => {
-			const result = await axios.get("http://localhost:8080/api/categories");
+			const result = await axios.get("/categories");
 			setCategories(result.data.categories);
 			console.log(result.data.categories);
 		};
