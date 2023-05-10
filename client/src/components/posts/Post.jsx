@@ -17,14 +17,14 @@ export default function Post({ post }) {
 				<div className="post__info">
 					<div className="post__categories">
 						{post.categories.map((category) => (
-							<div key={category.id}>
-								<span className="post__category">
+							<div>
+								<span key={category.id} className="post__category">
 									{category.name}
 								</span>
 							</div>
 						))}
 					</div>
-					<Link to={`http://localhost:8080/api/post/${post._id}`}>
+					<Link to={`/post/${post._id}`}>
 						<span className="post__title">{post.title}</span>
 					</Link>
 					<hr />

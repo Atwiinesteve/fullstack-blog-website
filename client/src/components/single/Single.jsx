@@ -8,16 +8,19 @@ import axios from "axios";
 
 // single post component
 export default function Single() {
+
+	// post location on page
 	const location = useLocation();
 	const path = location.pathname.split("/")[2];
-	console.log(path)
+	console.log(path);
+
+	// single post state
 	const [post, setPost] = useState({});
+
+	// fetching one post
 	useEffect(() => {
 		const fetchPost = async () => {
-			const result = await axios.get(`http://localhost:8080/api/post/`, {
-				params: { id: path },
-			});
-			console.log(result);
+			const result = await axios.get(`/post/${path}`);
 			setPost(result.data.post);
 		};
 		fetchPost();

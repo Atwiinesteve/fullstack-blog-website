@@ -13,7 +13,12 @@ const Post = require("../models/post.model");
 async function createPost(request, response) {
     try {
         const post = new Post({
-           ...request.body 
+           title: request.body.title,
+           desc: request.body.desc,
+           photo: request.body.photo,
+           profilePic: request.body.profilePic,
+           username: request.body.username,
+           categories: request.body.categories
         })
         post.save()
             .then((post) => {
@@ -89,7 +94,7 @@ async function deletePost(request, response) {
 // get one post
 async function onePost(request, response) {
     try {
-        const id = request.query.id;
+        const id = request.params.id;
         const post = await Post.findById(id);
         if(post) {
             return response.status(200).json({ post })

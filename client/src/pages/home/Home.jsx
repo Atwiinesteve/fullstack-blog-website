@@ -24,7 +24,8 @@ export default function Home() {
   // fetch posts.
   useEffect(() => {
     const getPosts = async () => {
-      const result = await axios.get("http://localhost:8080/api/posts");
+      const result = await axios.get("/posts");
+      console.log(result.data.posts);
       setPosts(result.data.posts);
     };
     getPosts();
