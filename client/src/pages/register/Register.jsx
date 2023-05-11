@@ -13,15 +13,16 @@ export default function Register() {
 	const [username, setUsername] = useState('')
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
+	const [error, setError] = useState(false);
 
 	// registration function
 	const handleRegistration = async (e) => {
 		e.preventDefault();
 		try {
 			const result = await axios.post("/auth/register-user", { username, email, password})
-			console.log(result);
+			return result.data && window.location.replace("/login")
 		} catch (error) {
-			console.log(error);
+			setError(true)
 		}
 	};
 
