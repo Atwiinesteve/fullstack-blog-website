@@ -112,28 +112,25 @@ async function onePost(request, response) {
 };
 
 // get all posts
-async function getAllPosts(request, response) {
+const getAllPosts = async (request, response) => {
+    const username = request.query.user;
+    const catName = request.query.categoryName;
     try {
-        const username = request.query.username;
-        const categoryName = request.query.categoryName;
         let posts;
-        if(username) {
-            posts = await Post.find({ username })
-        } else if(categoryName) {
-            posts = await Post.find({ categories: {
-                $in: [categoryName]
-            }})
-        } else {
-            posts = await Post.find()
-        }
-        return response.status(200).json({ posts })
-    } catch (error) {
-        console.log({
-            name: error.name,
-            message: error.message,
-            stack: error.stack
+        if (username) {
+        posts = await Post.find({ username });
+        } else if (catName) {
+        posts = await Post.find({
+            categories: {
+            $in: [catName],
+            },
         });
-        return response.status(500).json({ message: `Server Under Maintenance Mood. Please try again later...`})
+        } else {
+        posts = await Post.find();
+        }
+        response.status(200).json(posts);
+    } catch (err) {
+        response.status(500).json(err);
     }
 };
 

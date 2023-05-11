@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 // styles
 import "./sidebar.css";
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 // sidebar component
 export default function Sidebar() {
@@ -39,7 +40,9 @@ export default function Sidebar() {
 					<ul className="sidebar__list">
 						{categories.map((c) => (
 							<div className="sidebar__list__item">
-								<li key={c.id}>{c.name}</li>
+								<Link to={`/?category=${c.name}`}>
+									<li key={c.id}>{c.name}</li>
+								</Link>
 							</div>
 						))}
 					</ul>

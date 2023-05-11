@@ -8,17 +8,15 @@ import Post from "../posts/Post";
 import "./post.css";
 
 // sidebar component
-export default function Posts({postsData}) {
+export default function Posts({ postsData }) {
 	return (
 		<>
 			<div className="posts">
-				{
-					postsData.map((p) => (
-						<div className="post" key={p.id} >
-							<Post post={p} />
-						</div>
-					))
-				}
+				{postsData.map((p) => (
+					<div className="posts">
+						<Post key={p.id} post={p} />
+					</div>
+				))}
 			</div>
 		</>
 	);

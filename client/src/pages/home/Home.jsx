@@ -14,13 +14,13 @@ import Settings from '../settings/Settings';
 // styles
 import "./home.css";
 import Posts from '../../components/posts/Posts';
-// import { useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 // home component
 export default function Home() {
 
   // location
-  // const {search} = useLocation()
+  const {search} = useLocation()
 
   // post states
   const [posts, setPosts] = useState([]);
@@ -28,11 +28,11 @@ export default function Home() {
   // fetch posts.
   useEffect(() => {
     const getPosts = async () => {
-      const result = await axios.get("/posts");
-      setPosts(result.data.posts);
+      const result = await axios.get("/posts"+search);
+      setPosts(result.data);
     };
     getPosts();
-  }, []);
+  }, [search]);
 
   return (
     <>
