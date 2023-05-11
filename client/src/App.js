@@ -17,7 +17,7 @@ import SinglePost from "./pages/single/SinglePost";
 // app component.
 export default function App() {
 
-  const user = true;
+  const user = false;
 
 	return (
 		<>

@@ -1,3 +1,7 @@
+// express modules
+const bcrypt = require("bcrypt");
+
+// user model
 const User = require("../models/user.model");
 
 // register user
@@ -15,7 +19,7 @@ async function registerUser (request, response) {
                 password: hash,
                 profilePic: request.body.files
             });
-            newUser()
+            newUser.save()
                 .then((user) => {
                     return response.status(201).json({ user })
                 })
