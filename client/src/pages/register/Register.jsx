@@ -1,17 +1,41 @@
+// react imports
 import { Link } from "react-router-dom";
-import "./register.css";
+import { useState } from "react";
 
+// styles
+import "./register.css";
+import axios from "axios";
+
+// register component
 export default function Register() {
+
+	// registration data
+	const [username, setUsername] = useState('')
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
+
+	// registration function
+	const handleRegistration = async (e) => {
+		e.preventDefault();
+		try {
+			const result = await axios.post("/auth/register-user", { username, email, password})
+			console.log(result);
+		} catch (error) {
+			console.log(error);
+		}
+	};
+
 	return (
 		<div className="register">
 			<span className="registerTitle">Register</span>
-			<form className="registerForm">
+			<form className="registerForm" onSubmit={handleRegistration}>
 				<div className="input__control">
 					<label>Username</label>
 					<input
 						className="registerInput"
 						type="text"
 						placeholder="Enter your username..."
+						onChange={(e) => setUsername(e.target.value)}
 					/>
 				</div>
 				<div className="input__control">
@@ -20,6 +44,7 @@ export default function Register() {
 						className="registerInput"
 						type="text"
 						placeholder="Enter your email..."
+						onChange={(e) => setEmail(e.target.value)}
 					/>
 				</div>
 				<div className="input__control">
@@ -28,6 +53,7 @@ export default function Register() {
 						className="registerInput"
 						type="password"
 						placeholder="Enter your password..."
+						onChange={(e) => setPassword(e.target.value)}
 					/>
 				</div>
 				<button className="registerButton">Register</button>
