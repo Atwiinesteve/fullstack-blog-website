@@ -1,5 +1,6 @@
 // express modules
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 
 // user model
 const User = require("../models/user.model");
