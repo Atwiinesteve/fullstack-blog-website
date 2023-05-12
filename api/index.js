@@ -16,11 +16,11 @@ const corsOptions = {
     origin: ['http://localhost:3000']
 }
 
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(cookieParser());
 app.use(bodyParser.json())
-app.use(express.static(path.join(__dirname, '/images')))
+app.use("/api/images", express.static(path.join(__dirname, '/api/images')))
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/", require("./routes/auth.route"));

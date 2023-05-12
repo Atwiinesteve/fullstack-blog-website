@@ -37,10 +37,9 @@ export default function Write() {
 			} catch (error) {}
 		}
 		try {
-			const result = await axios.post("/posts", newPost);
-			window.location.replace("/post" + result.data._id);
+			const result = await axios.post("/create-post", newPost);
+			window.location.replace("/post/" + result.data.post._id);
 		} catch (error) {}
-		axios.post("/posts");
 	};
 
 	return (
