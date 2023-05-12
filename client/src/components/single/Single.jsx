@@ -8,6 +8,8 @@ import axios from "axios";
 
 // single post component
 export default function Single() {
+	// image url
+	const PF = "http://localhost:3000/api/images/";
 
 	// post location on page
 	const location = useLocation();
@@ -29,7 +31,7 @@ export default function Single() {
 		<div className="single__post">
 			<div className="single__post__wrapper">
 				{post.photo && (
-					<img className="single__post__img" src={post.photo} alt="" />
+					<img className="single__post__img" src={PF + post.photo} alt="" />
 				)}
 
 				<h1 className="single__post__title">
@@ -43,7 +45,9 @@ export default function Single() {
 					<span>
 						Author:
 						<b className="single__post__author">
-							<Link to={`/?user=${post.username}`} className="link">{post.username}</Link>
+							<Link to={`/?user=${post.username}`} className="link">
+								{post.username}
+							</Link>
 						</b>
 					</span>
 					<span>{new Date(post.createdAt).toDateString()}</span>

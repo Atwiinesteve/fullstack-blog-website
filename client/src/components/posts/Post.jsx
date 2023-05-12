@@ -7,11 +7,15 @@ import "./post.css";
 
 // sidebar component
 export default function Post({ post }) {
+
+	// image url
+	const PF = "http://localhost:3000/api/images/";
+
 	return (
 		<>
 			<div className="post">
 				{post.photo && (
-					<img src={post.photo} alt="cayote snapshot" className="post__image" />
+					<img src={PF + post.photo} alt="cayote snapshot" className="post__image" />
 				)}
 
 				<div className="post__info">
