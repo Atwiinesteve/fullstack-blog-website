@@ -1,13 +1,23 @@
 // react imports
-import React from "react";
+import React, { useContext } from "react";
 
 // styles
 import "./topbar.css";
 import { Link } from "react-router-dom";
 
+// context
+import { Context } from "../../context/Context";
+
 // topbar components
 export default function Topbar() {
-	const user = false;
+
+	// user context
+	const { user, dispatch } = useContext(Context);
+
+	// logout function
+	const handleLogout = () => {
+		dispatch({ type: "LOGOUT" })
+	}
 
 	return (
 		<>
@@ -32,31 +42,35 @@ export default function Topbar() {
 						<li className="link">
 							<Link to={"/write"}>WRITE</Link>
 						</li>
-						<li className="link">
-							{user && <Link to={"/logout"}>LOGOUT</Link>}
+						<li className="link" onClick={handleLogout}>
+							{user && "LOGOUT"}
 						</li>
 					</ul>
 				</div>
 				<div className="navbar__profile">
 					{user ? (
 						<img
-							src="https://images.unsplash.com/photo-1512485694743-9c9538b4e6e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fHBlb3BsZSUyMGZhY2VzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+							src={user.profilePic}
 							alt="profile avatar"
 							className="profile__image"
 						/>
 					) : (
 						<>
-							<ul className="links" style={{
-								listStyle: "none",
-								display: 'flex',
-								flexDirection: 'row',
-								color: "#444",
-								justifyContent: 'space-around',
-								fontWeight: "300"
-							}}>
-								<li className="link" style={{
-									marginRight: "20px"
+							<ul
+								className="links"
+								style={{
+									listStyle: "none",
+									display: "flex",
+									flexDirection: "row",
+									color: "#444",
+									justifyContent: "space-around",
+									fontWeight: "300",
 								}}>
+								<li
+									className="link"
+									style={{
+										marginRight: "20px",
+									}}>
 									<Link to={"/login"}>LOGIN</Link>
 								</li>
 								<li className="link">
