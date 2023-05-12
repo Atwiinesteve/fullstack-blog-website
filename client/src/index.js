@@ -8,11 +8,17 @@ import './index.css';
 // import app component.
 import App from './App';
 
+// importing context
+import { ContextProvider } from './context/Context';
+
+// application route.
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <ContextProvider>
+        <App />
+      </ContextProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
