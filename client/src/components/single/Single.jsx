@@ -1,6 +1,8 @@
 // react imports
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import {Context} from '../../context/Context';
+
 
 // import styles
 import "./single.css";
@@ -8,6 +10,10 @@ import axios from "axios";
 
 // single post component
 export default function Single() {
+	
+	// user context
+	const {user} = useContext(Context);
+
 	// image url
 	const PF = "http://localhost:8080/images/";
 
@@ -17,6 +23,16 @@ export default function Single() {
 
 	// single post state
 	const [post, setPost] = useState({});
+
+	// handle delete function
+	const handleDelete = async() => {
+		try {
+			await axios.delete(`/delete-post/${post._id}`, { data: { username: user.username }});
+			window.location.replace("/");
+		} catch (error) {
+			
+		}
+	}
 
 	// fetching one post
 	useEffect(() => {
@@ -36,10 +52,12 @@ export default function Single() {
 
 				<h1 className="single__post__title">
 					{post.title}
-					<div className="single__post__edit">
-						<i className="single__post__icon far fa-edit"></i>
-						<i className="single__post__icon far fa-trash-alt"></i>
-					</div>
+					{post.username === user?.username && 
+						<div className="single__post__edit">
+							<i className="single__post__icon far fa-edit"></i>
+							<i className="single__post__icon far fa-trash-alt" onClick={handleDelete}></i>
+						</div>
+					}
 				</h1>
 				<div className="single__post__info">
 					<span>
