@@ -9,7 +9,7 @@ import "./post.css";
 export default function Post({ post }) {
 
 	// image url
-	const PF = "http://localhost:3000/api/images/";
+	const PF = "http://localhost:8080/images/";
 
 	return (
 		<>
