@@ -25,12 +25,12 @@ export default function Single() {
 	const [post, setPost] = useState({});
 
 	// handle delete function
-	const handleDelete = async() => {
+	const handleDelete = async () => {
 		try {
 			await axios.delete(`/delete-post/${post._id}`, { data: { username: user.username }});
 			window.location.replace("/");
 		} catch (error) {
-			
+			console.log(error)
 		}
 	}
 
@@ -43,7 +43,8 @@ export default function Single() {
 		fetchPost();
 	}, [path]);
 
-	console.log(post.username === user.user.username)
+	console.log(post.username)
+	console.log(user.user.username)
 
 	return (
 		<div className="single__post">
@@ -57,7 +58,9 @@ export default function Single() {
 					{post.username === user.user?.username && (
 						<div className="single__post__edit">
 							<i className="single__post__icon far fa-edit"></i>
-							<i className="single__post__icon far fa-trash-alt" onClick={handleDelete}></i>
+							<i
+								className="single__post__icon far fa-trash-alt"
+								onClick={handleDelete}></i>
 						</div>
 					)}
 				</h1>
