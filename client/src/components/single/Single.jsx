@@ -1,7 +1,7 @@
 // react imports
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import {Context} from '../../context/Context';
+import { Context } from "../../context/Context";
 
 
 // import styles
@@ -43,6 +43,8 @@ export default function Single() {
 		fetchPost();
 	}, [path]);
 
+	console.log(post.username === user.user.username)
+
 	return (
 		<div className="single__post">
 			<div className="single__post__wrapper">
@@ -52,12 +54,12 @@ export default function Single() {
 
 				<h1 className="single__post__title">
 					{post.title}
-					{post.username === user?.username && 
+					{post.username === user.user?.username && (
 						<div className="single__post__edit">
 							<i className="single__post__icon far fa-edit"></i>
 							<i className="single__post__icon far fa-trash-alt" onClick={handleDelete}></i>
 						</div>
-					}
+					)}
 				</h1>
 				<div className="single__post__info">
 					<span>
