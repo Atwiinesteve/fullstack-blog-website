@@ -59,7 +59,7 @@ async function loginUser (request, response) {
                     if(error) {
                         console.log({ name: error.name, message: error.message, stack: error.stack })
                     } else {
-                        response.status(200).json({ message: `User Loggedin successfully..`})
+                        response.status(200).json({ message: `User Loggedin successfully..`, user: user })
                         return response.cookie("token", token, { httpOnly: true, maxAge: maxAge })
                     }
                 })
