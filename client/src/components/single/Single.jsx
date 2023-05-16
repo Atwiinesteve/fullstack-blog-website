@@ -9,7 +9,7 @@ import axios from "axios";
 // single post component
 export default function Single() {
 	// image url
-	const PF = "http://localhost:3000/api/images/";
+	const PF = "http://localhost:8080/images/";
 
 	// post location on page
 	const location = useLocation();
