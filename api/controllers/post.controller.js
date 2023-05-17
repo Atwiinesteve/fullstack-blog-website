@@ -84,10 +84,10 @@ async function updatePost(request, response) {
 async function deletePost(request, response) {
 	try {
 		const post = await Post.findById(request.params.id);
-		if (post.username === request.body.username) {
+		if (post) {
 			try {
 				await post.deleteOne();
-				response.status(200).json("Post has been deleted...");
+				return response.status(200).json("Post has been deleted...");
 			} catch (err) {
 				response.status(500).json(err);
 			}
