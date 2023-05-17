@@ -43,9 +43,6 @@ export default function Single() {
 		fetchPost();
 	}, [path]);
 
-	console.log(post.username)
-	console.log(user.user.username)
-
 	return (
 		<div className="single__post">
 			<div className="single__post__wrapper">
