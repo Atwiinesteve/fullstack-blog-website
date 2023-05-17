@@ -50,21 +50,22 @@ async function createPost(request, response) {
 // update post
 async function updatePost(request, response) {
 	try {
-		if (request.body.username === request.params.id) {
-			const updatedPost = await Post.findByIdAndUpdate(
-				request.params.id,
-				{
-					$set: request.body,
-				},
-				{ new: true },
-			);
-			if (updatedPost) {
-				return response
-					.status(200)
-					.json({ message: `Post updated successfuly..` });
-			} else {
-				return response.status(500).json({ message: `Post update failed..` });
+		const post = await Post.findById(request.params.id);
+		if (post) {
+			try {
+				const updatedPost = await Post.findByIdAndUpdate(
+					request.params.id,
+					{
+						$set: request.body,
+					},
+					{ new: true },
+				);
+				response.status(200).json(updatedPost);
+			} catch (err) {
+				response.status(500).json(err);
 			}
+		} else {
+			response.status(401).json("You can update only your post!");
 		}
 	} catch (error) {
 		console.log({
