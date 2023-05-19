@@ -48,12 +48,15 @@ export default function Topbar() {
 					</ul>
 				</div>
 				<div className="navbar__profile">
-					{user ? (
-						<img
-							src={user.profilePic}
-							alt="profile avatar"
-							className="profile__image"
-						/>
+					{user ? ( 
+						<Link to="/settings">
+							<img
+								style={{ cursor: 'pointer' }}
+								src={user.profilePic}
+								alt="profile avatar"
+								className="profile__image"
+							/>
+						</Link>
 					) : (
 						<>
 							<ul
