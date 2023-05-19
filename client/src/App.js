@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import { Routes, Route } from "react-router-dom";
 
 // components
-import Layout from "./components/Layout";
+// import Layout from "./components/Layout";
 import Topbar from "./components/topbar/Topbar";
 
 // pages

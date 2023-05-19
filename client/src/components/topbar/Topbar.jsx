@@ -22,6 +22,8 @@ export default function Topbar() {
 		dispatch({ type: "LOGOUT" })
 	}
 
+	// console.log(user.user.profilePic)
+
 	return (
 		<>
 			<div className="navbar__top">
