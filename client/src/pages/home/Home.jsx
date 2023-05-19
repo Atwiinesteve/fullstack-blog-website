@@ -6,10 +6,10 @@ import axios from 'axios';
 import Header from '../../components/header/Header';
 import Sidebar from '../../components/sidebar/Sidebar';
 
-// import pages
-import SinglePost from '../single/SinglePost';
-import Write from '../write/Write';
-import Settings from '../settings/Settings';
+// // import pages
+// import SinglePost from '../single/SinglePost';
+// import Write from '../write/Write';
+// import Settings from '../settings/Settings';
 
 // styles
 import "./home.css";

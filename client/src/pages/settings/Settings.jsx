@@ -30,7 +30,7 @@ export default function Settings() {
 		e.preventDefault();
 		dispatch({ type: "UPDATE_START" });
 		const updatedUser = {
-			userId: user._id,
+			userId: user.user._id,
 			username,
 			email,
 			password,
@@ -49,7 +49,7 @@ export default function Settings() {
 		};
 
 		try {
-			const res = await axios.put("/update-user/" + user._id, updatedUser);
+			const res = await axios.put("/update-user/" + user.user._id, updatedUser);
 			setSuccess(true);
 			dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
 		} catch (err) {
