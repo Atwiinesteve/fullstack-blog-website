@@ -11,6 +11,9 @@ import { Context } from "../../context/Context";
 // topbar components
 export default function Topbar() {
 
+	// public folder
+	const PF = "http://localhost:8080/images/";
+
 	// user context
 	const { user, dispatch } = useContext(Context);
 
@@ -52,7 +55,7 @@ export default function Topbar() {
 						<Link to="/settings">
 							<img
 								style={{ cursor: 'pointer' }}
-								src={user.profilePic}
+								src={PF+user.profilePic}
 								alt="profile avatar"
 								className="profile__image"
 							/>

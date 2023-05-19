@@ -1,14 +1,19 @@
 // react imports
-import React from 'react';
+import React, { useContext } from 'react';
 
 // import components.
 import Sidebar from "../../components/sidebar/Sidebar";
 
 // import styles
 import "./settings.css";
+import { Context } from '../../context/Context';
 
 // settings component
 export default function Settings() {
+
+	// user context
+	const {user} = useContext(Context);
+
 	return (
 		<div className="settings">
 			<div className="settings__wrapper">
@@ -20,7 +25,7 @@ export default function Settings() {
 					<label>Profile Picture</label>
 					<div className="settings__profile__picture">
 						<img
-							src="https://images.pexels.com/photos/6685428/pexels-photo-6685428.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+							src={user.profilePic}
 							alt=""
 						/>
 						<label htmlFor="file__input">
