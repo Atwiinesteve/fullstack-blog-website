@@ -17,7 +17,6 @@ import { Context } from "./context/Context";
 
 // app component.
 export default function App() {
-	
 	// user context
 	const { user } = useContext(Context);
 
